@@ -31,7 +31,10 @@ body {
     font-size: 22px;
     line-height: 25px;
   }
-
+.Temp{
+    font-size: 50px;
+    font-weight: bald;
+}
   .weatherDescription:first-letter{
     text-transform: capitalize;
   }

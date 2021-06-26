@@ -44,6 +44,7 @@ currentTime.innerHTML = `${hour}:${minute}  GMT ${gmtTimezone}`;
 
 function showCelTemp(response) {
   let tempCel = Math.round(response.data.main.temp);
+  degree=response.data.main.temp;
   let degreeCel = document.querySelector("#cel");
   degreeCel.innerHTML = `${tempCel}`;
   let weatherDescription = response.data.weather[0].description;
@@ -63,6 +64,7 @@ function showCelTemp(response) {
     iconElement.setAttribute(
       "alt", 
         response.data.weather[0].description);
+        console.log(response.data);
 }
 function searchCity(event) {
   event.preventDefault();
@@ -106,7 +108,7 @@ searchPosition.addEventListener(
 //Bonus
 let celDegree = document.querySelector("#cel");
 let fahDegree = document.querySelector("#fah");
-let degree = celDegree.innerHTML;
+let degree = null;
 let fah = document.querySelector("#fah-click");
 let cel = document.querySelector("#cel-click");
 
