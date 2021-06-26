@@ -40,6 +40,8 @@ if (hour < 10) {
   hour = `0${now.getHours()}`;
 }
 currentTime.innerHTML = `${hour}:${minute}  GMT ${gmtTimezone}`;
+
+
 function showCelTemp(response) {
   let tempCel = Math.round(response.data.main.temp);
   let degreeCel = document.querySelector("#cel");
@@ -53,6 +55,14 @@ function showCelTemp(response) {
   let weatherHumidity = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${weatherHumidity}%`;
+  let iconElement=document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src", `http://openweathermap.org/img/wn/${
+      response.data.weather[0].icon
+    }@2x.png`);
+    iconElement.setAttribute(
+      "alt", 
+        response.data.weather[0].description);
 }
 function searchCity(event) {
   event.preventDefault();
