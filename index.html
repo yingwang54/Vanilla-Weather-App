@@ -6,12 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/82040fdf09.js"
+      crossorigin="anonymous"
+    ></script>
+  </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
 </head>
 <body>
-    <h1>
-        Hello!
-    </h1>
+    <div class="container">
+        <h1 id="city-input">
+          Poznan
+        </h1>
+        <br />
+        <h2 id="current-time">
+          20:55 GMT+8
+        </h2>
+        <h2>
+          <div class="weatherToday">
+            <div id="description">Low, 13°C</div>
+            <div id="wind">Wind: 7 km/h</div>
+            <div id="humidity">Humidity: 63%</div>
+          </div>
+        </h2>
+        <form >
+          <div class="row">
+            <div class="col-7">
+              <input
+                type="search"
+                placeholder="Search your city here"
+                class="form-control"
+                id="search-city-input"
+              />
+            </div>
+            <div class="col-2" id="search-button">
+              <input type="submit" value="Serach now" class="form-control" />
+            </div>
+            <div class="col-3" id="find-button">
+              <input type="submit" value="Get local position" class="form-control" />
+            </div>
+          </div>
+  
+        </form>
+        <div class="Today" id="real-date">24-04-2021 Saturday</div>
+        <br />
+        <div><i class="far fa-moon InconMoon"></i></div>
+        <br />
+        <div class="Today">
+          <span id="cel">20</span>
+          <a href="#" class="degree" id="cel-click">°C</a>
+          <span>|</span>
+          <span id="fah"></span>
+          <a href="#" class="degree" id="fah-click">°F</a>
+        </div>
+        <br />
+        <div class="Date">
+          <strong>Weather in next five days</strong>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">
+            <div class="Date">Sun. 25th</div>
+            <div><i class="fas fa-cloud Icon IconCloud"></i></div>
+            <div class="Date">20°C - 9°C</div>
+          </div>
+          <div class="col">
+            <div class="Date">Mon. 26th</div>
+            <div><i class="fas fa-cloud-rain IconCloud"></i></div>
+            <div class="Date">22°C - 9°C</div>
+          </div>
+          <div class="col">
+            <div class="Date">Tue. 27th</div>
+            <div><i class="fas fa-sun IconSun"></i></div>
+            <div class="Date">24°C - 9°C</div>
+          </div>
+          <div class="col">
+            <div class="Date">Wed. 28th</div>
+            <div><i class="fas fa-sun IconSun"></i></div>
+            <div class="Date">24°C - 9°C</div>
+          </div>
+          <div class="col">
+            <div class="Date">Thu. 29th</div>
+            <div><i class="fas fa-cloud-sun IconCloud"></i></div>
+            <div class="Date">22°C - 11°C</div>
+          </div>
+        </div>
+      </div>
+      <div>
+          <div>
+              <a href="https://github.com/yingwang54/weather-application" target="_blank">
+              Open source </a>by Ying Wang
+          </div>
+      </div>
+
 </body>
 <script src="src/app.js"></script>
 </html>
