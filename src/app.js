@@ -28,6 +28,7 @@ let month = months[now.getMonth()];
 let year = now.getFullYear();
 let currentDate = document.querySelector("#real-date");
 currentDate.innerHTML = `${date} ${month}, ${year}  ${day}`;
+
 let hour = now.getHours();
 let minute = now.getMinutes();
 let timezone = now.getTimezoneOffset();
@@ -41,8 +42,12 @@ if (hour < 10) {
 }
 currentTime.innerHTML = `${hour}:${minute}  GMT ${gmtTimezone}`;
 
+let cityName=null;
+let cityInput = document.querySelector("#city-input");
 
 function showCelTemp(response) {
+cityName = response.data.name;
+cityInput.innerHTML = `${cityName}`;
   let tempCel = Math.round(response.data.main.temp);
   degree=response.data.main.temp;
   let degreeCel = document.querySelector("#cel");
@@ -66,13 +71,15 @@ function showCelTemp(response) {
         response.data.weather[0].description);
         console.log(response.data);
 }
+
+
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city-input");
 
-  let cityInput = document.querySelector("#city-input");
+  
   if (searchInput.value) {
-    cityInput.innerHTML = `${searchInput.value}`;
+  
     let apiKey = "f75c6779ae980097755ff7503f54fb9c";
     let city = searchInput.value;
 
@@ -80,9 +87,10 @@ function searchCity(event) {
 
     axios.get(`${apiUrl1}&appid=${apiKey}`).then(showCelTemp);
   } else {
-    cityInput.innerHTML = "Enter a city below";
+    cityInput.innerHTML = "Please enter a city";
   }
 }
+
 let search = document.querySelector("#search-button");
 search.addEventListener("click", searchCity);
 
@@ -132,3 +140,4 @@ function clickCel(event) {
 }
 
 cel.addEventListener("click", clickCel);
+
