@@ -64,5 +64,9 @@ body {
   }
   .Date {
     font-size: 22px;
+    text-align: center;
+  }
+  .Tempforecast{
+    font-size:18px;
   }
   
