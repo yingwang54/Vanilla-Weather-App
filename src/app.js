@@ -57,7 +57,7 @@ cityInput.innerHTML = `${cityName}`;
   description.innerHTML = `${weatherDescription}`;
   let weatherWind = response.data.wind.speed;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${Math.round(weatherWind * 18) / 5} km/h`;
+  wind.innerHTML = `Wind: ${Math.round(weatherWind * 5 / 8)} km/h`;
   let weatherHumidity = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${weatherHumidity}%`;
@@ -105,7 +105,7 @@ function displayForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt=""
-          width="52"
+          width="55"
         />
         <div class="Tempforecast">
            ${Math.round(
